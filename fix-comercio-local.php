@@ -7,7 +7,7 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.11
+ * Version:         0.1.12
  *
  * @package         Fix_Comercio_Local
  */
@@ -18,7 +18,6 @@ require 'plugin-update-checker.php';
 $fix1608230887_url_update 	= 'https://github.com/fixonweb/fix-comercio-local';
 $fix1608230887_slug 		= 'fix-comercio-local/fix-comercio-local';
 $fix1608230887_check 		= Puc_v4_Factory::buildUpdateChecker($fix1608230887_url_update,__FILE__,$fix1608230887_slug);
-
 
 $plugin_dir_path = plugin_dir_path( __FILE__ );
 include $plugin_dir_path."includes/functions.php";

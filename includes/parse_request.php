@@ -2,6 +2,15 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 add_action( 'parse_request', 'fix161174_parse_request');
 function fix161174_parse_request( &$wp ) {
+
+	//$role = get_role( 'my_custom_role' );
+	if($wp->request == 'get_roles'){
+		$role = get_role( 'role-administrativo' );
+		echo '<pre>';
+		print_r($role);
+		echo '</pre>';
+		exit;
+	}
 	if($wp->request == 'administrativo/comercio-local/upload_planilha'){
 		fix161174_access();
 		get_header();
