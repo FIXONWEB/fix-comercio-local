@@ -78,7 +78,7 @@ function fix161174_list_comercio_local($atts, $content = null){
 				.
 			</div>
 			<div>
-				<h4 style="margin: 0px;padding: 0px;line-height: 1;"><?php echo $comercio_locais->post_title ?></h4>
+				<h4 style="margin: 0px;padding: 0px;line-height: 1;"><a href="<?php echo $comercio_locais->guid ?>" title=""><?php echo $comercio_locais->post_title ?></a></h4>
 				<strong><?php echo $comercio_categoria_value ?></strong>
 				<div><?php echo $fix161174_endereco ?></div>
 				<div><?php echo $fix161174_telefone ?></div>
