@@ -97,7 +97,7 @@ function fix161174_list_comercio_local($atts, $content = null){
 
 add_shortcode("fix161174_head", "fix161174_head");
 function fix161174_head($atts, $content = null){
-	echo do_shortcode('[fix161340_mnu_lateral]');
+	// echo do_shortcode('[fix161340_mnu_lateral]');
 	?>
 			<style type="text/css" media="screen">
 				.fix161174 {

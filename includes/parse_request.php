@@ -92,7 +92,7 @@ WP_Role Object
 			
 		</div>
 		<?php
-		echo do_shortcode('[fix161340_mnu_lateral]');
+		// echo do_shortcode('[fix161340_mnu_lateral]');
 		get_footer();
 		exit;
 	}
