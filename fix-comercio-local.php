@@ -7,7 +7,7 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.21
+ * Version:         0.1.22
  *
  * @package         Fix_Comercio_Local
  */
@@ -29,3 +29,4 @@ include $plugin_dir_path."includes/cpts_comercio_local.php";
 include $plugin_dir_path."includes/taxonomy_comercio-categoria.php";
 include $plugin_dir_path."includes/shortcode.php";
 include $plugin_dir_path."includes/meta_boxes.php";
+include $plugin_dir_path."includes/single_template.php";

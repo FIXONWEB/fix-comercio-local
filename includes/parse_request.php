@@ -2,8 +2,14 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 add_action( 'parse_request', 'fix161174_parse_request');
 function fix161174_parse_request( &$wp ) {
-
+	// if(substr($wp->request, 0, 14)=='comercio-local' ){
+//http://id161541.dev.hostfix.com.br/comercio-local/fabrica-de-carne/
+		
+		// exit;
+	// }
 	//$role = get_role( 'my_custom_role' );
+
+	
 	if($wp->request == 'get_roles'){
 		$role = get_role( 'role-administrativo' );
 		echo '<pre>';
