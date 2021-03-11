@@ -7,7 +7,7 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.2
+ * Version:         0.1.3
  *
  * @package         Fix_Comercio_Local
  */
@@ -438,6 +438,7 @@ function fix161174_parse_request( &$wp ) {
 
 				if (in_array($fileExtension, $allowedfileExtensions)){
 					$dest_path = plugin_dir_path( __FILE__ )."planilhas/listagem_comercio_local.xlsx";
+					die($dest_path);
 					if(move_uploaded_file($fileTmpPath, $dest_path)) {
 						$message ='File is successfully uploaded.';
 						wp_redirect( site_url()."/fix161174_exec_upload_planilha" );
