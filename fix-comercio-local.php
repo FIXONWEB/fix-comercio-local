@@ -7,19 +7,19 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.5
+ * Version:         0.1.6
  *
  * @package         Fix_Comercio_Local
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-include "includes/parse_request.php";
-
 require 'plugin-update-checker.php';
 $fix1608230887_url_update 	= 'https://github.com/fixonweb/fix-comercio-local';
 $fix1608230887_slug 		= 'fix-comercio-local/fix-comercio-local';
 $fix1608230887_check 		= Puc_v4_Factory::buildUpdateChecker($fix1608230887_url_update,__FILE__,$fix1608230887_slug);
+
+include "includes/parse_request.php";
 
 register_activation_hook( __FILE__, 'fix161174_activation_hook' );
 function fix161174_activation_hook() {
