@@ -7,7 +7,7 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.28
+ * Version:         0.1.29
  *
  * @package         Fix_Comercio_Local
  */
