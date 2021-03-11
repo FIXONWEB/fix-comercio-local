@@ -11,6 +11,32 @@ function fix161174_parse_request( &$wp ) {
 		echo '</pre>';
 		exit;
 	}
+
+/*
+WP_Role Object
+(
+    [name] => role-administrativo
+    [capabilities] => Array
+        (
+            [contributor] => 1
+            [create_posts] => 1
+            [delete_others_posts] => 1
+            [delete_posts] => 1
+            [delete_private_posts] => 1
+            [delete_published_posts] => 1
+            [edit_others_posts] => 1
+            [edit_posts] => 1
+            [edit_private_posts] => 1
+            [edit_published_posts] => 1
+            [level_0] => 1
+            [manage_categories] => 1
+            [publish_posts] => 1
+            [read] => 1
+            [read_private_posts] => 1
+        )
+
+)
+*/
 	if($wp->request == 'administrativo/comercio-local/upload_planilha'){
 		fix161174_access();
 		get_header();

@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-register_activation_hook( __FILE__, 'fix161174_activation_hook' );
+register_activation_hook( $plugin_dir_path, 'fix161174_activation_hook' );
 function fix161174_activation_hook() {
 	if (!$GLOBALS['wp_roles']->is_role( 'administrativo' )) {
 		add_role( 
