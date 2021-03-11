@@ -1,5 +1,4 @@
 <?php
-die('---');
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 add_action( 'parse_request', 'fix161174_parse_request');
 function fix161174_parse_request( &$wp ) {

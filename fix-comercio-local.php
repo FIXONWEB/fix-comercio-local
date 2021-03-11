@@ -7,7 +7,7 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.8
+ * Version:         0.1.9
  *
  * @package         Fix_Comercio_Local
  */
@@ -19,101 +19,14 @@ $fix1608230887_url_update 	= 'https://github.com/fixonweb/fix-comercio-local';
 $fix1608230887_slug 		= 'fix-comercio-local/fix-comercio-local';
 $fix1608230887_check 		= Puc_v4_Factory::buildUpdateChecker($fix1608230887_url_update,__FILE__,$fix1608230887_slug);
 
-include WP_PLUGIN_DIR."/includes/parse_request.php";
+
+$plugin_dir_path = plugin_dir_path( __FILE__ );
+include $plugin_dir_path."includes/parse_request.php";
+include $plugin_dir_path."includes/activation_hook.php";
+include $plugin_dir_path."includes/cpts_comercio_local.php";
+include $plugin_dir_path."includes/taxonomy_comercio-categoria.php";
 
 
-register_activation_hook( __FILE__, 'fix161174_activation_hook' );
-function fix161174_activation_hook() {
-	
-	if (!$GLOBALS['wp_roles']->is_role( 'administrativo' )) {
-		add_role( 
-			'role-administrativo', 
-			'role-administrativo', array( 
-				'read' => true, 
-				'contributor' => true, 
-				'level_0' => true 
-			) 	
-		);
-	}
-}
-
-
-
-function fix161174_cpts_comercio_local() {
-
-	$labels = array(
-		"name" => "Comércios locais",
-		"singular_name" => "Comércio local",
-	);
-
-	$args = array(
-		"label" => "Comercio local",
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"delete_with_user" => false,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => array( "slug" => "comercio-local", "with_front" => true ),
-		"query_var" => true,
-		// "supports" => array( "title", "editor","thumbnail" ),
-		"supports" => array( "title", "thumbnail" ),
-	);
-
-	register_post_type( "comercio-local", $args );
-}
-add_action( 'init', 'fix161174_cpts_comercio_local' );
-
-
-
-
-
-
-
-
-function fix161174_taxonomy_categoria() {
-    // Add new taxonomy, make it hierarchical (like categories)
-    $labels = array(
-        'name'              => 'Categorias de Comércio',
-        'singular_name'     => 'Categoria de Comércio',
-        'search_items'      => 'Localizar Categoria de Comércio',
-        'all_items'         => 'Todas as Categorias de Comércio',
-        'parent_item'       => 'Categoria Pai',
-        'parent_item_colon' => 'Categoria superior (acima/pai):',
-        'edit_item'         => 'EDITAR Categoria de Comércio',
-        'update_item'       => 'ATUALIZAR Categoria de Comércio',
-        'add_new_item'      => 'Adicionar NOVA categoria de Comércio',
-        'new_item_name'     => 'Nome da NOVA categoria de Comércio',
-        'menu_name'         => 'Categorias de Comércio',
-    );
- 
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'comercio-categoria' ),
-    );
- 
-    register_taxonomy( 'comercio-categoria', array( 'comercio-local' ), $args );
- 
-    unset( $args );
-    unset( $labels );
- 
-}
-// hook into the init action and call create_book_taxonomies when it fires
-add_action( 'init', 'fix161174_taxonomy_categoria', 0 );
 
 
 
