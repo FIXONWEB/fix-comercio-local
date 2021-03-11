@@ -119,6 +119,7 @@ function fix161174_parse_request( &$wp ) {
 				$allowedfileExtensions = array('xlsx');
 
 				if (in_array($fileExtension, $allowedfileExtensions)){
+					//******precisa ser adaptado caso este codigo mude de local, senão a outra parte que çle a planilha nao ira funcionar
 					$dest_path = plugin_dir_path( __FILE__ )."planilhas/listagem_comercio_local.xlsx";
 					// die($dest_path);
 					///var/www/clients/client26/web26/web/wp-content/plugins/fix-comercio-local/planilhas/listagem_comercio_local.xlsx
