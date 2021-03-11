@@ -7,7 +7,7 @@
  * Author URI:      https://fixonweb.com.br
  * Text Domain:     fix-comercio-local
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.1.1
  *
  * @package         Fix_Comercio_Local
  */
@@ -24,8 +24,8 @@ function fix161174_activation_hook() {
 	
 	if (!$GLOBALS['wp_roles']->is_role( 'administrativo' )) {
 		add_role( 
-			'administrativo', 
-			'Administrativo', array( 
+			'role-administrativo', 
+			'role-administrativo', array( 
 				'read' => true, 
 				'contributor' => true, 
 				'level_0' => true 
